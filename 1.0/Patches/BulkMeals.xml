@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Vegetable Garden</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Silage -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="MakebulkSilage"]/workAmount</xpath>
+          <value>
+            <workAmount>2700</workAmount>
+          </value>
+        </li>
+        <!-- Kibble -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="VG_MakebulkKibble"]/workAmount</xpath>
+          <value>
+            <workAmount>1800</workAmount>
+          </value>
+        </li>
+        <!-- Simple meals -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="CookMealSimple_Bulk"]/workAmount</xpath>
+          <value>
+            <workAmount>1200</workAmount>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="CookMealSimple_Bulk"]/skillRequirements/Cooking</xpath>
+          <value>
+            <Cooking>4</Cooking>
+          </value>
+        </li>
+        <!-- Fine meals -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="CookMealFine_Bulk"]/workAmount</xpath>
+          <value>
+            <workAmount>1800</workAmount>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="CookMealFine_Bulk"]/skillRequirements/Cooking</xpath>
+          <value>
+            <Cooking>10</Cooking>
+          </value>
+        </li>
+        <!-- Lavish meals -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="CookMealLavish_Bulk"]/workAmount</xpath>
+          <value>
+            <workAmount>3200</workAmount>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="CookMealLavish_Bulk"]/skillRequirements/Cooking</xpath>
+          <value>
+            <Cooking>12</Cooking>
+          </value>
+        </li>
+        <!-- Survival meals -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="VG_MakebulkPemmican"]/workAmount</xpath>
+          <value>
+            <workAmount>2800</workAmount>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <success>Always</success>
+          <xpath>Defs/RecipeDef[defName="VG_MakebulkPemmican"][not(skillRequirements) and not(skillRequirements/Cooking)]</xpath>
+          <value>
+            <skillRequirements>
+              <Cooking>4</Cooking>
+            </skillRequirements>
+          </value>
+        </li>
+        <!-- Specialized meals do not need bulk recipes -->
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/RecipeDef[
+						defName="BulkBrewCoffee" or 
+						defName="BulkBrewTea" or 
+						defName="CookBulkMealSurvival"]/*/..
+					</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

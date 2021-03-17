@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/RecipeDef/recipeUsers/li[text()="VG_Campfire"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/TerrainDef[defName="BambooFloor" or defName="IronwoodFloor" or defName="FineIronwoodFloor"]/*/..</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="MakeBambooWood" or defName="PlantTreeIronwood" or defName="VG_TorchLamp" or defName="VG_Campfire"]/*/..</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/RecipeDef[defName="VG_MakeBiofuel" or defName="MakeChemfuelFromBamboo"]/*/..</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/*[self::RecipeDef or self::ThingDef]//li[text()="Bamboo" or text()="VG_IronWoodLog"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName = "VG_IronWoodLog" or defName = "Bamboo"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/TraderKindDef/stockGenerators/li[thingDef="VG_IronWoodLog"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/WorkGiverDef[defName="DoBillsCookBambooCampfire" or defName="DoBillsHaulBambooCampfire"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Plant_TreeBamboo"]/plant/harvestedThingDef</xpath>
+    <value>
+      <harvestedThingDef>WoodLog</harvestedThingDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef/comps/li/offsets/li/defs/li[text()="VG_Campfire" or text()="VG_TorchLamp"]</xpath>
+  </Operation>
+</Patch>

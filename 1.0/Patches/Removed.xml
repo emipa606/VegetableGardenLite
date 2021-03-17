@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Vegetable Garden</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <li Class="PatchOperationRemove">
+          <success>Always</success>
+          <xpath>
+						Defs/RecipeDef/recipeUsers/li[text()="VG_Campfire"]
+						|
+						Defs/TerrainDef[
+						defName="BambooFloor" or 
+						defName="IronwoodFloor"]/*/..
+						|
+						Defs/ThingDef[
+						defName="VG_Campfire" or 
+						defName="MakeBambooWood" or 
+						defName="PlantTreeIronwood"]/*/..
+						|
+						Defs/RecipeDef[
+						defName="VG_MakeBiofuel" or 
+						defName="MakeChemfuelFromBamboo"]/*/..
+						|
+						Defs/*[self::RecipeDef or self::ThingDef]//li[text()="Bamboo" or text()="VG_IronWoodLog"]
+						|
+						Defs/ThingDef[
+						defName = "VG_IronWoodLog" or 
+						defName = "Bamboo"]
+					</xpath>
+        </li>
+        <li Class="PatchOperationReplace">
+          <success>Always</success>
+          <xpath>Defs/ThingDef[defName="Plant_TreeBamboo"]/plant/harvestedThingDef</xpath>
+          <value>
+            <harvestedThingDef>WoodLog</harvestedThingDef>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Vegetable Garden Lite</name>
+  <author>Owlchemist</author>
+  <supportedVersions>
+    <li>1.0</li>
+  </supportedVersions>
+  <description>
+		The goal of this mod is to tighten the scope of the Vegetable Garden, while focusing on enabling the mod to simply add new content to the game without impacting the difficulty very much.
+	</description>
+</ModMetaData>

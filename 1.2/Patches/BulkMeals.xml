@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Vegetable Garden</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Silage -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="MakebulkSilage"]/workAmount</xpath>
+          <value>
+            <workAmount>2700</workAmount>
+          </value>
+        </li>
+        <!-- Kibble -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="VG_MakebulkKibble"]/workAmount</xpath>
+          <value>
+            <workAmount>1800</workAmount>
+          </value>
+        </li>
+        <!-- Specialized meals do not need bulk recipes -->
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/RecipeDef[
+						defName="BulkBrewCoffee" or 
+						defName="BulkBrewTea"]/*/..
+					</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

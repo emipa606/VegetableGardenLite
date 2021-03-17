@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Vegetable Garden</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThoughtDef[defName="SomethingGood"]/stages/li[label/text()="Something Good for me!"]/label</xpath>
+          <value>
+            <label>Had something healthy</label>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
