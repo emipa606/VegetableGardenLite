@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>SeedsPlease</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <success>Always</success>
+          <xpath>Defs/SeedsPlease.SeedDef[defName="Seed_Ironwood"]</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <success>Always</success>
+          <xpath>Defs/RecipeDef[defName="ExtractSeed_Ironwood"]</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
