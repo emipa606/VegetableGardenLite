@@ -1,5 +1,8 @@
 # Changelog for VegetableGardenLite
 
+1.4.1 - Mod updated for 1.4 and passed autotests
+
+
 1.0.1.0 - Mod updated for 1.3 and passed autotests
 
 
