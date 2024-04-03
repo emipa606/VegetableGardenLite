@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Vegetable Garden</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>*/ThingDef[defName="Silage"]/statBases/Nutrition</xpath>
+          <value>
+            <Nutrition>0.05</Nutrition>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>*/RecipeDef[defName="MakeSilage"]/products/Silage</xpath>
+          <value>
+            <Silage>100</Silage>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>*/RecipeDef[defName="MakebulkSilage"]/products/Silage</xpath>
+          <value>
+            <Silage>300</Silage>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Vegetable Garden</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>*/ThingDef[@Name="VG_FruitTreeBase"]/plant/harvestYield</xpath>
+          <value>
+            <harvestYield>80</harvestYield>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>*/ThingDef[@Name="VG_RawFruitBase"]/statBases/Mass</xpath>
+          <value>
+            <Mass>0.03</Mass>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>*/ThingDef[defName="Plantmushroom"]/plant/harvestYield</xpath>
+          <value>
+            <harvestYield>9</harvestYield>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[
+						defName="RawAgave" or 
+						defName="RawBerries" or 
+						defName="Rawmushroom" or 
+						@Name="VG_RawFruitBase"]/statBases/Nutrition
+					</xpath>
+          <value>
+            <Nutrition>0.05</Nutrition>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
